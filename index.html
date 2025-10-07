@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zidcloud — Coming Soon</title>
+  <meta name="description" content="Zidcloud by Elshobah Digital Agency — A faster, smarter cloud workspace. Launching soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#07090f; --bg-2:#0b1020; --card:#0c1324; --ink:#eef4ff; --muted:#94a3b8; --line:rgba(255,255,255,.08);
+      --accent:#7c3aed; --accent-2:#22d3ee; --accent-3:#16a34a; --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+      background: radial-gradient(1200px 800px at 90% -10%, rgba(124,58,237,.25), transparent 60%),
+                  radial-gradient(900px 600px at -10% 110%, rgba(34,211,238,.25), transparent 60%),
+                  linear-gradient(180deg, var(--bg), var(--bg-2));}
+    .wrap{min-height:100dvh; display:grid; place-items:center; padding: clamp(20px, 4vw, 48px)}
+    .shell{width:min(1080px, 100%); display:grid; grid-template-columns: 1.1fr .9fr; gap: clamp(24px, 4vw, 48px)}
+    .card{background: rgba(255,255,255,.04); border:1px solid var(--line); backdrop-filter: blur(14px); border-radius: var(--radius);}
+    .hero{position:relative; overflow:hidden;}
+    .heroInner{padding: clamp(20px, 5vw, 56px); display:flex; flex-direction:column; gap:18px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:44px;height:44px;border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:grid; place-items:center; font-weight:800; color:#0b0418}
+    h1{font-size:clamp(28px,5vw,56px); line-height:1.05; margin:6px 0 0}
+    p{margin:0; color:var(--muted); font-size:clamp(14px,1.6vw,18px)}
+    .tag{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; border:1px solid var(--line); background:rgba(255,255,255,.04); font-size:12px; letter-spacing:.3px; text-transform:uppercase}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px; border-radius:14px; text-decoration:none; font-weight:700}
+    .btnPrimary{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#0b0418}
+    .btnGhost{border:1px solid var(--line); color:var(--ink); background:rgba(255,255,255,.03)}
+
+    .right{position:relative}
+    .profile{display:grid; place-items:center; padding: clamp(10px, 2vw, 24px)}
+    .pfWrap{position:relative; width:100%; aspect-ratio:1/1; display:grid; place-items:center}
+    .pfCircle{position:absolute; inset:6%; border-radius:999px; background: radial-gradient(120% 120% at 30% 30%, rgba(124,58,237,.18), rgba(34,211,238,.18) 50%, transparent 70%); border:1px dashed rgba(255,255,255,.14)}
+    .pfImg{position:relative; width:72%; border-radius:22px; box-shadow: 0 10px 40px rgba(0,0,0,.5)}
