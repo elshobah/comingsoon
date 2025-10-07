@@ -39,3 +39,133 @@
     .pfWrap{position:relative; width:100%; aspect-ratio:1/1; display:grid; place-items:center}
     .pfCircle{position:absolute; inset:6%; border-radius:999px; background: radial-gradient(120% 120% at 30% 30%, rgba(124,58,237,.18), rgba(34,211,238,.18) 50%, transparent 70%); border:1px dashed rgba(255,255,255,.14)}
     .pfImg{position:relative; width:72%; border-radius:22px; box-shadow: 0 10px 40px rgba(0,0,0,.5)}
+    .bubbles{position:absolute; inset:0; pointer-events:none}
+    .bubble{position:absolute; width:12px; height:12px; border-radius:999px; background: rgba(255,255,255,.14)}
+    .b1{left:8%; top:14%}
+    .b2{left:14%; bottom:16%}
+    .b3{right:10%; top:18%}
+    .b4{right:14%; bottom:12%}
+
+    .countdown{display:flex; gap:14px; flex-wrap:wrap; margin-top:8px}
+    .time{flex:1 1 120px; min-width:120px; text-align:center; padding:18px; border-radius:16px; border:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));}
+    .time .num{font-size: clamp(28px, 4vw, 40px); font-weight:800}
+    .time .lab{font-size:12px; letter-spacing:.3px; color:var(--muted)}
+
+    .foot{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top: clamp(18px, 3vw, 28px); padding:0 clamp(0px, 1vw, 6px)}
+    .socials{display:flex; gap:12px}
+    .socials a{display:grid; place-items:center; width:40px; height:40px; border-radius:12px; border:1px solid var(--line); background:rgba(255,255,255,0.03)}
+
+    .orn1,.orn2,.orn3{position:absolute; filter:blur(80px); opacity:.6; pointer-events:none}
+    .orn1{top:-40px; left:-40px; width:220px; height:220px; background:radial-gradient(circle at 30% 30%, #7c3aed, transparent 60%)}
+    .orn2{bottom:-20px; right:-40px; width:280px; height:280px; background:radial-gradient(circle at 60% 40%, #22d3ee, transparent 60%)}
+    .orn3{top:30%; right:38%; width:160px; height:160px; background:radial-gradient(circle at 60% 40%, #16a34a, transparent 60%)}
+
+    @media (max-width: 980px){
+      .shell{grid-template-columns: 1fr}
+      .pfImg{width:68%}
+      .foot{flex-direction:column; align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="shell">
+      <!-- Left / Hero -->
+      <section class="hero card">
+        <div class="orn1"></div><div class="orn2"></div><div class="orn3"></div>
+        <div class="heroInner">
+          <div class="brand">
+            <div class="logo">ZC</div>
+            <div>
+              <strong style="font-size:18px; letter-spacing:.3px">Zidcloud</strong><br>
+              <span style="font-size:12px; color:var(--muted)">by Elshobah Digital Agency</span>
+            </div>
+          </div>
+          <span class="tag">Coming Soon</span>
+          <h1>All‑in‑one cloud workspace<br>that feels <em style="font-style:normal; color:#c7d2fe">effortless</em>.</h1>
+          <p>We’re crafting a blazing‑fast platform for files, mail, and collaboration—built for teams who care about speed and clarity.</p>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px">
+              <strong>Launch Countdown</strong>
+              <span class="tag" id="launchLabel"></span>
+            </div>
+            <div class="countdown" id="countdown">
+              <div class="time"><div class="num" id="d">–</div><div class="lab">Days</div></div>
+              <div class="time"><div class="num" id="h">–</div><div class="lab">Hours</div></div>
+              <div class="time"><div class="num" id="m">–</div><div class="lab">Minutes</div></div>
+              <div class="time"><div class="num" id="s">–</div><div class="lab">Seconds</div></div>
+            </div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn btnPrimary" href="mailto:hi@zidcloud.com" title="Contact Zidcloud">Contact Us</a>
+            <a class="btn btnGhost" href="https://elshobah.com/" target="_blank" rel="noopener">About Elshobah</a>
+          </div>
+        </div>
+
+        <div class="foot">
+          <div class="socials">
+            <a aria-label="Instagram" href="#" title="Instagram"> 
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="currentColor" opacity=".6"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="currentColor"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg>
+            </a>
+            <a aria-label="LinkedIn" href="#" title="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.94 8.5H3.75v11.75h3.19V8.5ZM5.35 3.75a1.88 1.88 0 1 0 0 3.75 1.88 1.88 0 0 0 0-3.75ZM20.25 20.25v-6.05c0-3.24-1.73-4.75-4.05-4.75-1.86 0-2.69 1.02-3.15 1.73V8.5h-3.19v11.75h3.19v-5.82c0-1.54.29-3.03 2.2-3.03 1.88 0 1.91 1.76 1.91 3.13v5.72h3.09Z" fill="currentColor"/></svg>
+            </a>
+            <a aria-label="X (Twitter)" href="#" title="X">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.2 3.75h3.04l-6.64 7.59 7.8 8.91H16.2l-4.86-5.7-5.56 5.7H2.75l7.1-7.28-7.54-8.22H8.1l4.4 4.8 5.7-5.8Z" fill="currentColor"/></svg>
+            </a>
+          </div>
+          <span style="font-size:12px; color:var(--muted)">© <span id="year"></span> Zidcloud — Made by Elshobah Digital Agency</span>
+        </div>
+      </section>
+
+      <!-- Right / Portrait -->
+      <aside class="right card profile">
+        <div class="pfWrap">
+          <div class="pfCircle"></div>
+          <img class="pfImg" alt="Founder holding a tablet" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABbsAAAYACAYAAABfGpWkAAAQAElEQVR4Aez9WZNl25YeCH1jzLmavbe7R3vOidPd092+ydtkfz..."/>
+          <div class="bubbles">
+            <span class="bubble b1"></span>
+            <span class="bubble b2"></span>
+            <span class="bubble b3"></span>
+            <span class="bubble b4"></span>
+          </div>
+        </div>
+        <div style="text-align:center; padding: 8px 8px 22px; color:var(--muted); font-size:14px">Built for creators & teams who move fast.</div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // === Countdown (adjust your target date/time) ===
+    const LAUNCH_ISO = '2025-12-10T10:00:00+04:00';
+    const launchDate = new Date(LAUNCH_ISO);
+    const $ = (id)=>document.getElementById(id);
+    const pad = (n)=> String(n).padStart(2,'0');
+
+    function tick(){
+      const now = new Date();
+      const diff = launchDate - now;
+      const label = document.getElementById('launchLabel');
+      if (diff <= 0){
+        ['d','h','m','s'].forEach(k=>{ const el=document.getElementById(k); if(el) el.textContent='00';});
+        if(label) label.textContent = 'Launched';
+        return;
+      }
+      const s = Math.floor(diff/1000);
+      const days = Math.floor(s/86400);
+      const hrs = Math.floor((s%86400)/3600);
+      const mins = Math.floor((s%3600)/60);
+      const secs = s%60;
+      const map = {d:days,h:hrs,m:mins,s:secs};
+      for(const k in map){ const el = document.getElementById(k); if(el) el.textContent = pad(map[k]); }
+    }
+    setInterval(tick, 1000); tick();
+    const intl = new Intl.DateTimeFormat('en-GB', { dateStyle:'full', timeStyle:'short' });
+    const lbl = document.getElementById('launchLabel');
+    if(lbl) lbl.textContent = 'Launch: ' + intl.format(new Date(LAUNCH_ISO));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
